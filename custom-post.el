@@ -7,6 +7,5 @@
 
 (load-theme 'doom-molokai t)
 
-;; Slime
-(load (expand-file-name "~/.roswell/helper.el"))
+;; Common Lisp
 (setq inferior-lisp-program "ros -Q run")
