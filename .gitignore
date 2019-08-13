@@ -63,6 +63,7 @@ persistent-scratch/
 persp-confs/
 request/
 rust-playground/
+semanticdb/
 server/
 session*
 thumbs/
@@ -73,3 +74,4 @@ tutorial/
 url/
 var/
 workspace/
+/semanticdb/!Users!steve!.emacs.d!semantic.cache

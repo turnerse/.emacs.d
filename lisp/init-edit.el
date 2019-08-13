@@ -264,19 +264,19 @@
   :hook (after-init . smart-region-on))
 
 ;; On-the-fly spell checker
-(use-package flyspell
-  :ensure nil
-  :diminish
-  :if (executable-find "aspell")
-  :hook (((text-mode outline-mode) . flyspell-mode)
-         ;; (prog-mode . flyspell-prog-mode)
-         (flyspell-mode . (lambda ()
-                            (dolist (key '("C-;" "C-," "C-."))
-                              (unbind-key key flyspell-mode-map)))))
-  :init
-  (setq flyspell-issue-message-flag nil
-        ispell-program-name "aspell"
-        ispell-extra-args '("--sug-mode=ultra" "--lang=en_US" "--run-together")))
+;; (use-package flyspell
+;;   :ensure nil
+;;   :diminish
+;;   :if (executable-find "aspell")
+;;   :hook (((text-mode outline-mode) . flyspell-mode)
+;;          ;; (prog-mode . flyspell-prog-mode)
+;;          (flyspell-mode . (lambda ()
+;;                             (dolist (key '("C-;" "C-," "C-."))
+;;                               (unbind-key key flyspell-mode-map)))))
+;;   :init
+;;   (setq flyspell-issue-message-flag nil
+;;         ispell-program-name "aspell"
+;;         ispell-extra-args '("--sug-mode=ultra" "--lang=en_US" "--run-together")))
 
 ;; Hungry deletion
 (use-package hungry-delete
