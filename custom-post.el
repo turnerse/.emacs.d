@@ -9,3 +9,10 @@
 
 ;; Common Lisp
 (setq inferior-lisp-program "ros -Q run")
+
+;;;  enable narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+
+;;;  which-key
+(which-key-setup-side-window-right)
+;;; end
