@@ -8,4 +8,21 @@ This is a literate org file, that gets processed by org-babel-load-file
                  (format "org version: %s\n" (org-version))))
 #+END_SRC    
 
+Add some more keybindings for org-roam functions:
+
+#+BEGIN_SRC emacs-lisp 
+  (use-package org-roam
+    :bind (:map org-roam-mode-map
+           (("C-c n d" . org-roam-date)
+            ("C-c n j" . org-roam-jump-to-index)
+            ("C-c n b" . org-roam-switch-to-buffer)
+            ("C-c n t" . org-roam-dailies-today)
+            ("C-c n y" . org-roam-dailies-yesterday)
+            ("C-c n w" . org-roam-dailies-tomorrow)
+            ("C-c n d" . org-roam-dailies-date)
+            ("C-c n r" . org-roam-unlinked-references)
+            ("C-c n c" . org-roam-capture)
+            )))
+#+END_SRC    
+
 
