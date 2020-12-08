@@ -1,0 +1,11 @@
+
+This file contains my (Steve Turner's) custom elisp code for Centaur emacs.
+
+This is a literate org file, that gets processed by org-babel-load-file
+
+#+BEGIN_SRC emacs-lisp 
+  (princ (concat (format "Emacs version: %s\n" (emacs-version))
+                 (format "org version: %s\n" (org-version))))
+#+END_SRC    
+
+

@@ -67,7 +67,13 @@
  '(centaur-package-archives 'melpa)
  '(centaur-theme 'default)
  '(mac-command-modifier 'meta)
- '(mac-mouse-wheel-mode t))
+ '(mac-mouse-wheel-mode t)
+ '(markdown-command "pandoc")
+ '(org-roam-directory "~/org-roam/")
+ '(package-archives
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")
+     ("org" . "https://orgmode.org/elpa/"))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
