@@ -66,6 +66,10 @@
  ;; If there is more than one, they won't work right.
  '(centaur-package-archives 'melpa)
  '(centaur-theme 'default)
+ '(create-lockfiles nil)
+ '(dimmer-mode t)
+ '(global-display-line-numbers-mode t)
+ '(global-hl-line-mode t)
  '(mac-command-modifier 'meta)
  '(mac-mouse-wheel-mode t)
  '(markdown-command "pandoc")
