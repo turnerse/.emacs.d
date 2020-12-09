@@ -68,7 +68,7 @@
  '(centaur-theme 'default)
  '(create-lockfiles nil)
  '(dimmer-mode t)
- '(global-display-line-numbers-mode t)
+ '(global-display-line-numbers-mode nil)
  '(global-hl-line-mode t)
  '(mac-command-modifier 'meta)
  '(mac-mouse-wheel-mode t)

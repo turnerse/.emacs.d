@@ -26,6 +26,17 @@ Add some more keybindings for org-roam functions:
             )))
 #+END_SRC    
 
+Deft mode is used by a lot of note-takers. Is it useful? Maybe.
+#+BEGIN_SRC emacs-lisp 
+(use-package deft
+  :ensure t
+  :custom
+  (deft-extensions '("org" "md" "txt"))
+  (deft-directory "~/repos/GitLab/turners/org")
+  (deft-use-filename-as-title t)
+  (deft-recursive t))
+#+END_SRC    
+
 There are a great many keybindings that are actively hostile, in that they are
 bound to useless or obsolete functions that are really easy to trigger
 accidentally.
