@@ -3,13 +3,14 @@ This file contains my (Steve Turner's) custom elisp code for Centaur emacs.
 
 This is a literate org file, that gets processed by org-babel-load-file
 
+See also the (custom-set-variables ...) section of custom.el, which I modify
+only through the (customize) interface.
 #+BEGIN_SRC emacs-lisp 
   (princ (concat (format "Emacs version: %s\n" (emacs-version))
                  (format "org version: %s\n" (org-version))))
 #+END_SRC    
 
 Add some more keybindings for org-roam functions:
-
 #+BEGIN_SRC emacs-lisp 
   (use-package org-roam
     :bind (:map org-roam-mode-map
@@ -28,24 +29,34 @@ Add some more keybindings for org-roam functions:
 There are a great many keybindings that are actively hostile, in that they are
 bound to useless or obsolete functions that are really easy to trigger
 accidentally.
-
 #+BEGIN_SRC emacs-lisp 
 (unbind-key "C-z") ;; suspend-frame
 #+END_SRC    
+On the other hand, the Option key is unused, so I can bind it to 'super (in
+custom.el) and use it as a prefix for my own private keybindings, like so:
+#+BEGIN_SRC emacs-lisp 
+(define-key global-map [?\s-p] 'projectile-switch-project)
+(define-key global-map [?\s-m] 'magit-status)
+#+END_SRC    
 
 Every Emacs window should, by default occupy all the screen space it can.
-
 #+BEGIN_SRC emacs-lisp 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+END_SRC    
 
 I find it useful to have a slightly more apparent indicator of which buffer is
 active at the moment.
-
 #+BEGIN_SRC emacs-lisp 
 (use-package dimmer
   :custom (dimmer-fraction 0.6)
   :config (dimmer-mode))
-
-(dimmer-mode 1)
+(dimmer-mode t)
+(dimmer-configure-which-key) ;; don't dim the which-key minibuffer
+(dimmer-configure-magit)
+(dimmer-configure-org)
+;; (dimmer-configure-company-box)
+;; (dimmer-configure-helm)
+;; (dimmer-configure-gnus)
+(dimmer-configure-hydra)
+(dimmer-configure-posframe)
 #+END_SRC    

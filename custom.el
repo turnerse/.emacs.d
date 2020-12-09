@@ -72,6 +72,7 @@
  '(global-hl-line-mode t)
  '(mac-command-modifier 'meta)
  '(mac-mouse-wheel-mode t)
+ '(mac-option-modifier 'super)
  '(markdown-command "pandoc")
  '(org-roam-directory "~/org-roam/")
  '(package-archives
