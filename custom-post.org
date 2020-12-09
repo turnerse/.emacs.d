@@ -48,7 +48,7 @@ I find it useful to have a slightly more apparent indicator of which buffer is
 active at the moment.
 #+BEGIN_SRC emacs-lisp 
 (use-package dimmer
-  :custom (dimmer-fraction 0.6)
+  :custom (dimmer-fraction 0.4)
   :config (dimmer-mode))
 (dimmer-mode t)
 (dimmer-configure-which-key) ;; don't dim the which-key minibuffer
