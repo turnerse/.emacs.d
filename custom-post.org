@@ -46,13 +46,17 @@ accidentally.
 On the other hand, the Option key is unused, so I can bind it to 'super (in
 custom.el) and use it as a prefix for my own private keybindings, like so:
 #+BEGIN_SRC emacs-lisp 
-(define-key global-map [?\s-p] 'projectile-switch-project)
-(define-key global-map [?\s-m] 'magit-status)
+;; (define-key projectile-mode-map (kbd "s-,") 'projectile-command-map)
+;; (define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
+;; (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
+;; (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
+;; (define-key projectile-mode-map [?\s-g] 'projectile-grep)
+;; (define-key global-map [?\s-m] 'magit-status)
 #+END_SRC    
 
 Every Emacs window should, by default occupy all the screen space it can.
 #+BEGIN_SRC emacs-lisp 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;;(add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+END_SRC    
 
 I find it useful to have a slightly more apparent indicator of which buffer is

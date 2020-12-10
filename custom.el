@@ -78,7 +78,9 @@
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")
-     ("org" . "https://orgmode.org/elpa/"))))
+     ("org" . "https://orgmode.org/elpa/")))
+ '(which-key-idle-delay 0.5)
+ '(which-key-side-window-max-height 1.0))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
