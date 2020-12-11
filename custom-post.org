@@ -76,14 +76,32 @@ active at the moment.
 (dimmer-configure-posframe)
 #+END_SRC    
 
-PGP
+* Encryption with PGP
 
+Enable some libraries:
 #+begin_src emacs-lisp
-(require 'epa-file)
-(epa-file-enable)
-;; Fix EasyPG error.
-;; From https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html.
-(defvar epa-pinentry-mode)
-(setq epa-pinentry-mode 'loopback)
+  (require 'epa-file)
+  (epa-file-enable)
+  (require 'org-crypt)
+#+end_src
+Make sure that when a file is saved any entries that were decrypted are encrypted before the file hits your harddisk:
+#+begin_src emacs-lisp
+  (org-crypt-use-before-save-magic)
+#+end_src
+Ensure things don’t get confused if an encrypted item has children (you probably
+don’t want to encrypt each child individually and then encrypt the parent):
+#+begin_src emacs-lisp
+  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+#+end_src
+We are just going to use a password to encrypt entries rather than a
+public/private key pair:
+#+begin_src emacs-lisp
+  (setq org-crypt-key nil)
+#+end_src
+Fix EasyPG error.
+From https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html
+#+begin_src emacs-lisp
+  (defvar epa-pinentry-mode)
+  (setq epa-pinentry-mode 'loopback)
 #+end_src
 
