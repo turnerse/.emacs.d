@@ -105,3 +105,7 @@ From https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-i
   (setq epa-pinentry-mode 'loopback)
 #+end_src
 
+Don't put "Centaur Emacs" in the title for each frame.
+#+begin_example
+(setq frame-title-format '("%b"))
+#+end_example
