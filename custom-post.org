@@ -75,3 +75,15 @@ active at the moment.
 (dimmer-configure-hydra)
 (dimmer-configure-posframe)
 #+END_SRC    
+
+PGP
+
+#+begin_src emacs-lisp
+(require 'epa-file)
+(epa-file-enable)
+;; Fix EasyPG error.
+;; From https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-issue.html.
+(defvar epa-pinentry-mode)
+(setq epa-pinentry-mode 'loopback)
+#+end_src
+
