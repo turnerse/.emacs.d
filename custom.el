@@ -74,7 +74,7 @@
  '(mac-mouse-wheel-mode t)
  '(mac-option-modifier 'super)
  '(markdown-command "pandoc")
- '(org-roam-directory "~/org-roam/")
+ '(org-roam-directory "/Users/steve/org-roam/")
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")

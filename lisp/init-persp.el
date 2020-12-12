@@ -126,7 +126,8 @@
                        (eq (buffer-local-value 'major-mode b) 'erc-mode)
                        (eq (buffer-local-value 'major-mode b) 'rcirc-mode)
                        (eq (buffer-local-value 'major-mode b) 'nov-mode)
-                       (eq (buffer-local-value 'major-mode b) 'vterm-mode)))))
+                       ;;(eq (buffer-local-value 'major-mode b) 'vterm-mode)
+                       ))))
 
   ;; Don't save persp configs in `recentf'
   (with-eval-after-load 'recentf
