@@ -117,14 +117,14 @@
   )
 
 ;; Shell Pop
-(use-package shell-pop
-  :bind ([f9] . shell-pop)
-  :init (setq shell-pop-window-size 30
-              shell-pop-shell-type
-              (cond ((fboundp 'vterm) '("vterm" "*vterm*" #'vterm))
-                    (sys/win32p '("eshell" "*eshell*" #'eshell))
-                    (t '("terminal" "*terminal*"
-                         (lambda () (term shell-pop-term-shell)))))))
+;; (use-package shell-pop
+;;   :bind ([f9] . shell-pop)
+;;   :init (setq shell-pop-window-size 30
+;;               shell-pop-shell-type
+;;               (cond ((fboundp 'vterm) '("vterm" "*vterm*" #'vterm))
+;;                     (sys/win32p '("eshell" "*eshell*" #'eshell))
+;;                     (t '("terminal" "*terminal*"
+;;                          (lambda () (term shell-pop-term-shell)))))))
 
 (provide 'init-shell)
 
