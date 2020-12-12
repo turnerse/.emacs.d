@@ -74,6 +74,34 @@
  '(mac-mouse-wheel-mode t)
  '(mac-option-modifier 'super)
  '(markdown-command "pandoc")
+ '(org-capture-templates
+   '(("i" "Idea" entry
+      (file "/Users/steve/org//idea.org")
+      "*  %^{Title} %?
+%U
+%a
+")
+     ("t" "Todo" entry
+      (file "/Users/steve/org//gtd.org")
+      "* TODO %?
+%U
+%a
+")
+     ("n" "Note" entry
+      (file "/Users/steve/org//note.org")
+      "* %? :NOTE:
+%U
+%a
+")
+     ("j" "Journal" entry
+      (file+olp+datetree "/Users/steve/org//journal.org")
+      "*  %^{Title} %?
+%U
+%a
+")
+     ("b" "Book" entry
+      (file+olp+datetree "/Users/steve/org//book.org")
+      "* Topic: %^{Description}  %^g %? Added: %U")))
  '(org-roam-directory "/Users/steve/org-roam/")
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
