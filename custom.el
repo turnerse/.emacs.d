@@ -67,6 +67,7 @@
  '(centaur-package-archives 'melpa)
  '(centaur-theme 'default)
  '(create-lockfiles nil)
+ '(deft-directory "~/org")
  '(dimmer-mode t)
  '(global-display-line-numbers-mode nil)
  '(global-hl-line-mode t)
@@ -76,31 +77,19 @@
  '(markdown-command "pandoc")
  '(org-capture-templates
    '(("i" "Idea" entry
-      (file "/Users/steve/org//idea.org")
-      "*  %^{Title} %?
-%U
-%a
-")
+      (file "/Users/steve/org/idea.org")
+      "*  %^{Title} %?")
      ("t" "Todo" entry
-      (file "/Users/steve/org//gtd.org")
-      "* TODO %?
-%U
-%a
-")
+      (file "/Users/steve/org/gtd.org")
+      "* TODO %?")
      ("n" "Note" entry
-      (file "/Users/steve/org//note.org")
-      "* %? :NOTE:
-%U
-%a
-")
+      (file "/Users/steve/org/note.org")
+      "* %? :NOTE:")
      ("j" "Journal" entry
-      (file+olp+datetree "/Users/steve/org//journal.org")
-      "*  %^{Title} %?
-%U
-%a
-")
+      (file+olp+datetree "/Users/steve/org/journal.org")
+      "*  %^{Title} %?")
      ("b" "Book" entry
-      (file+olp+datetree "/Users/steve/org//book.org")
+      (file+olp+datetree "/Users/steve/org/book.org")
       "* Topic: %^{Description}  %^g %? Added: %U")))
  '(org-roam-directory "/Users/steve/org-roam/")
  '(package-archives
