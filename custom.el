@@ -75,6 +75,7 @@
  '(mac-mouse-wheel-mode t)
  '(mac-option-modifier 'super)
  '(markdown-command "pandoc")
+ '(org-agenda-files '("/Users/steve/org"))
  '(org-capture-templates
    '(("i" "Idea" entry
       (file "/Users/steve/org/idea.org")
@@ -91,7 +92,8 @@
      ("b" "Book" entry
       (file+olp+datetree "/Users/steve/org/book.org")
       "* Topic: %^{Description}  %^g %? Added: %U")))
- '(org-roam-directory "/Users/steve/org-roam/")
+ '(org-directory "~/org")
+ '(org-roam-directory "~/org")
  '(package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")
