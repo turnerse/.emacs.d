@@ -133,3 +133,24 @@ lisp/init-org.el after custom.el and overwrites it!
            (file+olp+datetree "/Users/steve/org//book.org")
            "* Topic: %^{Description}  %^g %? Added: %U")))
 #+end_src
+
+* org-download
+#+begin_src emacs-lisp
+  (require 'org-download)
+  ;; Drag-and-drop to `dired`
+  (add-hook 'dired-mode-hook 'org-download-enable)
+#+end_src 
+* org-journal
+#+begin_src emacs-lisp
+  ;; org-journal
+  (use-package org-journal
+    :ensure t
+    :defer t
+    :init
+    ;; Change default prefix key; needs to be set before loading org-journal
+    (setq org-journal-prefix-key "C-c j ")
+    :config
+    (setq org-journal-dir "~/org/journal/"
+          org-journal-file-type 'weekly
+          org-journal-date-format "%Y-%m-%d %A"))
+#+end_src 
