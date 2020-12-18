@@ -67,7 +67,7 @@
  '(centaur-package-archives 'melpa)
  '(centaur-theme 'default)
  '(create-lockfiles nil)
- '(deft-directory "~/org")
+ '(deft-directory "~/org" t)
  '(dimmer-mode t)
  '(global-display-line-numbers-mode nil)
  '(global-hl-line-mode t)
@@ -78,19 +78,19 @@
  '(org-agenda-files '("/Users/steve/org"))
  '(org-capture-templates
    '(("i" "Idea" entry
-      (file "/Users/steve/org/idea.org")
+      (file "/Users/steve/org//idea.org")
       "*  %^{Title} %?")
      ("t" "Todo" entry
-      (file "/Users/steve/org/gtd.org")
+      (file "/Users/steve/org//gtd.org")
       "* TODO %?")
      ("n" "Note" entry
-      (file "/Users/steve/org/note.org")
+      (file "/Users/steve/org//note.org")
       "* %? :NOTE:")
      ("j" "Journal" entry
-      (file+olp+datetree "/Users/steve/org/journal.org")
+      (file+olp+datetree "/Users/steve/org//journal.org")
       "*  %^{Title} %?")
      ("b" "Book" entry
-      (file+olp+datetree "/Users/steve/org/book.org")
+      (file+olp+datetree "/Users/steve/org//book.org")
       "* Topic: %^{Description}  %^g %? Added: %U")))
  '(org-directory "~/org")
  '(org-roam-directory "~/org")

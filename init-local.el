@@ -20,5 +20,4 @@
 ;; Drag-and-drop to `dired`
 (add-hook 'dired-mode-hook 'org-download-enable)
 
-
 (provide 'init-local)

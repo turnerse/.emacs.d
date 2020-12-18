@@ -32,7 +32,6 @@
 /amx-items
 /bookmarks
 /company-statistics-cache.el
-/custom-post.el
 /history
 /nov-places
 /package-quickstart.el
@@ -81,3 +80,4 @@ tutorial/
 url/
 var/
 workspace/
+custom-post.el

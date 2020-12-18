@@ -111,3 +111,25 @@ Don't put "Centaur Emacs" in the title for each frame.
 #+begin_example
 (setq frame-title-format '("%b"))
 #+end_example
+
+Have to redefine org-capture-templates, because Centaur Emacs loads
+lisp/init-org.el after custom.el and overwrites it!
+
+#+begin_src emacs-lisp
+  (setq org-capture-templates
+        '(("i" "Idea" entry
+           (file "/Users/steve/org//idea.org")
+           "*  %^{Title} %?")
+          ("t" "Todo" entry
+           (file "/Users/steve/org//gtd.org")
+           "* TODO %?")
+          ("n" "Note" entry
+           (file "/Users/steve/org//note.org")
+           "* %? :NOTE:")
+          ("j" "Journal" entry
+           (file+olp+datetree "/Users/steve/org//journal.org")
+           "*  %^{Title} %?")
+          ("b" "Book" entry
+           (file+olp+datetree "/Users/steve/org//book.org")
+           "* Topic: %^{Description}  %^g %? Added: %U")))
+#+end_src
