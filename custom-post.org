@@ -158,5 +158,5 @@ lisp/init-org.el after custom.el and overwrites it!
 Disable company in org-mode:
 
 #+begin_src emacs-lisp
-  (setq company-global-modes '(not org-mode))
+  (setq company-global-modes '(not org-mode org-roam-mode org-capture-mode erc-mode message-mode help-mode gud-mode eshell-mode shell-mode))
 #+end_src
