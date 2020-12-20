@@ -154,3 +154,9 @@ lisp/init-org.el after custom.el and overwrites it!
           org-journal-file-type 'weekly
           org-journal-date-format "%Y-%m-%d %A"))
 #+end_src 
+
+Disable company in org-mode:
+
+#+begin_src emacs-lisp
+  (setq company-global-modes '(not org-mode))
+#+end_src
