@@ -67,7 +67,7 @@
  '(centaur-package-archives 'melpa)
  '(centaur-theme 'default)
  '(create-lockfiles nil)
- '(deft-directory "~/org" t)
+ '(deft-directory "~/org")
  '(dimmer-mode t)
  '(global-display-line-numbers-mode nil)
  '(global-hl-line-mode t)
@@ -82,6 +82,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")
      ("org" . "https://orgmode.org/elpa/")))
+ '(tab-bar-show 1)
  '(which-key-idle-delay 0.5)
  '(which-key-side-window-max-height 1.0))
 
