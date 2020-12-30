@@ -34,7 +34,6 @@ Deft mode is used by a lot of note-takers. Is it useful? Maybe.
   :ensure t
   :custom
   (deft-extensions '("org" "md" "txt"))
-  (deft-directory "~/repos/GitLab/turners/org")
   (deft-use-filename-as-title t)
   (deft-recursive t))
 #+END_SRC    
