@@ -41,7 +41,6 @@ Deft mode is used by a lot of note-takers. Is it useful? Maybe.
   :ensure t
   :custom
   (deft-extensions '("org" "md" "txt"))
-  (deft-directory "~/repos/GitLab/turners/org")
   (deft-use-filename-as-title t)
   (deft-recursive t))
 #+END_SRC    
@@ -139,4 +138,31 @@ lisp/init-org.el after custom.el and overwrites it!
           ("b" "Book" entry
            (file+olp+datetree "/Users/steve/org//book.org")
            "* Topic: %^{Description}  %^g %? Added: %U")))
+#+end_src
+
+* org-download
+#+begin_src emacs-lisp
+;;  (require 'org-download)
+  ;; Drag-and-drop to `dired`
+;;  (add-hook 'dired-mode-hook 'org-download-enable)
+#+end_src 
+* org-journal
+#+begin_src emacs-lisp
+  ;; org-journal
+  ;; (use-package org-journal
+  ;;   :ensure t
+  ;;   :defer t
+  ;;   :init
+  ;;   ;; Change default prefix key; needs to be set before loading org-journal
+  ;;   (setq org-journal-prefix-key "C-c j ")
+  ;;   :config
+  ;;   (setq org-journal-dir "~/org/journal/"
+  ;;         org-journal-file-type 'weekly
+  ;;         org-journal-date-format "%Y-%m-%d %A"))
+#+end_src 
+
+Disable company in org-mode:
+
+#+begin_src emacs-lisp
+  (setq company-global-modes '(not org-mode org-roam-mode org-capture-mode erc-mode message-mode help-mode gud-mode eshell-mode shell-mode))
 #+end_src

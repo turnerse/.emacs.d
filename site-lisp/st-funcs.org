@@ -1,0 +1,9 @@
+
+From https://unix.stackexchange.com/a/243679
+
+#+begin_src emacs-lisp 
+  (defun st-filename ()
+    "Copy the full path of the current buffer into kill-ring."
+    (interactive)
+    (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window))))
+#+end_src
