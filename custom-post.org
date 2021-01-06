@@ -10,6 +10,13 @@ only through the (customize) interface.
                  (format "org version: %s\n" (org-version))))
 #+END_SRC    
 
+Ledger for finances:
+#+BEGIN_SRC emacs-lisp 
+(use-package ledger-mode
+  :ensure t
+  :mode ".ledger")
+#+END_SRC    
+
 Add some more keybindings for org-roam functions:
 #+BEGIN_SRC emacs-lisp 
 (use-package org-roam
