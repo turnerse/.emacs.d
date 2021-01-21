@@ -2,8 +2,18 @@
 From https://unix.stackexchange.com/a/243679
 
 #+begin_src emacs-lisp 
-  (defun st-filename ()
+  (defun st/filename ()
     "Copy the full path of the current buffer into kill-ring."
     (interactive)
     (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window))))
+#+end_src
+
+From https://emacs.stackexchange.com/a/41292
+
+#+begin_src emacs-lisp
+(defun st/dired-find-file-following-symlinks ()
+  "In Dired, visit the file or directory on the line, following symlinks"
+  (interactive)
+  (let ((find-file-visit-truename t))
+    (dired-find-file)))
 #+end_src
