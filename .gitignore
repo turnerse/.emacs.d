@@ -82,3 +82,5 @@ var/
 workspace/
 custom-post.el
 .#recentf
+/org-gcal/
+/persist/
