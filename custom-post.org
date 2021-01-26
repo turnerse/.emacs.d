@@ -82,6 +82,14 @@ active at the moment.
 ;; (dimmer-configure-gnus)
 (dimmer-configure-hydra)
 (dimmer-configure-posframe)
+
+(defun st/dimmer-configure-ediff ()
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*ediff-merge\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*Ediff Control Panel\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*.*UPPER=.*\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*.*LOWER=.*\\*$"))
+
+(st/dimmer-configure-ediff)
 #+END_SRC    
 
 * Encryption with PGP
