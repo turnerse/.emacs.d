@@ -142,9 +142,9 @@ lisp/init-org.el after custom.el and overwrites it!
 
 * org-download
 #+begin_src emacs-lisp
-;;  (require 'org-download)
+  (require 'org-download)
   ;; Drag-and-drop to `dired`
-;;  (add-hook 'dired-mode-hook 'org-download-enable)
+  (add-hook 'dired-mode-hook 'org-download-enable)
 #+end_src 
 * org-journal
 #+begin_src emacs-lisp
@@ -177,5 +177,8 @@ From https://stackoverflow.com/a/29757750
                     (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer))))
 (defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'st/ediff-copy-both-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
-
 #+end_src
+
+See also https://github.com/redguardtoo/emacs.d/blob/master/lisp/init-ediff.el
+
+He has taken this idea further.
