@@ -82,6 +82,14 @@ active at the moment.
 ;; (dimmer-configure-gnus)
 (dimmer-configure-hydra)
 (dimmer-configure-posframe)
+
+(defun st/dimmer-configure-ediff ()
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*ediff-merge\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*Ediff Control Panel\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*.*UPPER=.*\\*$")
+  (add-to-list 'dimmer-exclusion-regexp-list "^\\*.*LOWER=.*\\*$"))
+
+(st/dimmer-configure-ediff)
 #+END_SRC    
 
 * Encryption with PGP
@@ -91,6 +99,7 @@ Enable some libraries:
   (require 'epa-file)
   (epa-file-enable)
   (require 'org-crypt)
+  (custom-set-variables '(epg-gpg-program "/usr/local/bin/gpg"))
 #+end_src
 Make sure that when a file is saved any entries that were decrypted are encrypted before the file hits your harddisk:
 #+begin_src emacs-lisp
@@ -111,13 +120,15 @@ From https://colinxy.github.io/software-installation/2016/09/24/emacs25-easypg-i
 #+begin_src emacs-lisp
   (defvar epa-pinentry-mode)
   (setq epa-pinentry-mode 'loopback)
+
 #+end_src
 
-Don't put "Centaur Emacs" in the title for each frame.
+
+* Don't put "Centaur Emacs" in the title for each frame.
 #+begin_example
 (setq frame-title-format '("%b"))
 #+end_example
-
+* org-capture-templates
 Have to redefine org-capture-templates, because Centaur Emacs loads
 lisp/init-org.el after custom.el and overwrites it!
 
@@ -140,6 +151,13 @@ lisp/init-org.el after custom.el and overwrites it!
            "* Topic: %^{Description}  %^g %? Added: %U")))
 #+end_src
 
+* org-agenda
+From Reddit [[https://www.reddit.com/r/orgmode/comments/8r70oh/make_orgagenda_show_this_month_and_also_previous/?utm_source=share&utm_medium=web2x&context=3][r/orgmode]]
+#+begin_src emacs-lisp
+(setq org-agenda-start-day "-7d")
+(setq org-agenda-span 45)
+(setq org-log-into-drawer t)
+#+end_src
 * org-download
 #+begin_src emacs-lisp
   (require 'org-download)
@@ -178,7 +196,37 @@ From https://stackoverflow.com/a/29757750
 (defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'st/ediff-copy-both-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
 #+end_src
+* org-gcal         
+This pulls my calendar entries into org-agenda. However, there are some credentials that I don't want public on github.com. So I encrypt this block of elisp code.
+** encrypted                                                           :crypt:
+-----BEGIN PGP MESSAGE-----
 
-See also https://github.com/redguardtoo/emacs.d/blob/master/lisp/init-ediff.el
+jA0EBwMCaGzm+a4dCPvm0sCyARpO9m0fdMqrzwZFP7RcZPYGfwY2UxdL+om1tVZt
+ytrUAGIsM+3hiM7IgmFlZBeKMDoNXvXhJz/5Zl2TpttkePa+s6/vYOkf2n9Ntgw4
+2NuvZCVmlYrUsKC/rZXcZxbqxTN7uvFiHyoVWkG96qu6ogFXsV10opNM5sJA7UJN
+fbjkkQWnDaGA/SsfABQ+MTf9PedLnU53xzu/JaXtz400J9oeDDZ+TInah1CJ7YlT
+PM6fYRNwc3JC1mx/xzoGx/0yiA3m8iZs7RhpyyZudQAOHp2+JGJ5l3IegVToE2R+
+5I16qP0Az2OXlNLUoOcWfUeRCIsvd7WVMGcZ61lLO6D73lW0OUJxgQpz/C0BkXS0
+zXPipoItbM/3vwgzE6noWPpvP6I7mLv8LGCsgHy3WeuYmGLd4hM/OvvRt6x+y96l
+8mI2KofcBj0nBbhYMubvF/etFQd9b6RO/5Aw8mgaMtehDw3ipUtlqEUNxTWq1FFG
+1Nsp0w==
+=zpyZ
+-----END PGP MESSAGE-----
+** cleartext
+This is what gets uncrypted above (absent the secrets). Run "M-x
+org-decrypt-entry" on it and enter the passphrase. It is encrypted again upon
+save to disk.
 
-He has taken this idea further.
+#+begin_src emacs-lisp
+  ;; (use-package org-gcal
+  ;;   :after org
+  ;;   :config
+  ;;   (setq org-gcal-client-id "<longstring>.apps.googleusercontent.com"
+  ;;         org-gcal-client-secret "<secret>"
+  ;;         org-gcal-file-alist '(("<me>@gmail.com" . "~/org/gcal.org"))
+  ;;         org-gcal-auto-archive nil
+  ;;         org-gcal-notify-p nil)
+  ;;
+  ;;   (add-hook 'org-agenda-mode-hook 'org-gcal-fetch)
+  ;;   (add-hook 'org-capture-after-finalize-hook 'org-gcal-fetch))
+#+end_src
